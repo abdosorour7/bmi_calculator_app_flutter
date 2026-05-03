@@ -4,7 +4,7 @@ Simple **Flutter** app that computes Body Mass Index (BMI) from height, weight, 
 
 ## Preview
 
-![App preview](./app_preview.gif)
+<img src="./app_preview.gif" width="304">
 
 ## Features
 

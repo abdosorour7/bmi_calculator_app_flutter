@@ -67,12 +67,12 @@ class _FirstScreenState extends State<FirstScreen> {
                   child: Row(
                     spacing: 10,
                     children: [
-                      GenderCard(
+                      genderCard(
                         gender: "Male",
                         icon: Icons.male,
                         isSelected: isMale,
                       ),
-                      GenderCard(
+                      genderCard(
                         gender: "Female",
                         icon: Icons.female,
                         isSelected: !isMale,
@@ -145,8 +145,9 @@ class _FirstScreenState extends State<FirstScreen> {
                         Text(
                           () {
                             if (unit == 'cm') return '${height.round()} cm';
-                            if (unit == 'in')
+                            if (unit == 'in') {
                               return '${(height / 2.54).toStringAsFixed(1)} in';
+                            }
                             // feet: e.g. 5'7"
                             final double totalInches = height / 2.54;
                             final int ft = (totalInches / 12).floor();
@@ -261,7 +262,7 @@ class _FirstScreenState extends State<FirstScreen> {
     );
   }
 
-  Expanded GenderCard({
+  Expanded genderCard({
     required String gender,
     required IconData icon,
     required bool isSelected,
@@ -316,10 +317,10 @@ class _FirstScreenState extends State<FirstScreen> {
                 icon: Icon(Icons.remove),
                 color: Color(0xFFFFFFFF),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(
                     const Color(0xFF2b2b2b),
                   ),
-                  shape: MaterialStateProperty.all(
+                  shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -341,10 +342,10 @@ class _FirstScreenState extends State<FirstScreen> {
                 icon: Icon(Icons.add),
                 color: Color(0xFFFFFFFF),
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
+                  backgroundColor: WidgetStateProperty.all(
                     const Color(0xFF2b2b2b),
                   ),
-                  shape: MaterialStateProperty.all(
+                  shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
